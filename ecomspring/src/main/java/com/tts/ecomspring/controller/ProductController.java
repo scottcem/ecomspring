@@ -24,13 +24,16 @@ public class ProductController {
         return "product";
     }
 
-    // TODO: Either implement admin controls or remove these methods.
-
-    @RequestMapping(value = "/product", method = {RequestMethod.POST,
-            RequestMethod.PUT})
+    @RequestMapping(value = "/product", method = {RequestMethod.POST, RequestMethod.PUT})
     public String createOrUpdate(@Valid Product product) {
         productService.save(product);
         return "redirect:/product/" + product.getId();
+    }
+    @GetMapping("/addProduct")
+    public String addProduct(Model model){
+        Product newProduct = new Product();
+        model.addAttribute("product", newProduct);
+        return "addProduct";
     }
 
 }

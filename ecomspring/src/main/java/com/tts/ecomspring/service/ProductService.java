@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class ProductService {
     @Autowired
-    ProductRepository productRepository;
+    private ProductRepository productRepository;
 
     public List<Product> findAll() {
         return productRepository.findAll();
@@ -25,8 +25,8 @@ public class ProductService {
         return productRepository.findDistinctBrands();
     }
 
-    public List<String> findDistinctCategory() {
-        return productRepository.findDistinctCategory();
+    public List<String> findDistinctCategories() {
+        return productRepository.findDistinctCategories();
     }
 
     public void save(Product product) {

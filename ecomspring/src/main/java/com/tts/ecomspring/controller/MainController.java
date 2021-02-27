@@ -6,11 +6,11 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.ServletException;
-import javax.validation.Valid;
 import java.util.List;
 
 @Data
@@ -22,7 +22,7 @@ public class MainController {
     @Autowired
     ProductService productService;
 
-    @GetMapping(value="/")
+    @GetMapping
     public String main(){
         return "main";
 
@@ -35,24 +35,19 @@ public class MainController {
 
     @ModelAttribute("categories")
     public List<String> categories() {
-        return productService.findDistinctCategory();
+        return productService.findDistinctCategories();
     }
 
     @ModelAttribute("brands")
     public List<String> brands(){
-
         return productService.findDistinctBrands();
     }
 
     @GetMapping("/filter")
-    public String filter(@RequestParam(required = false)
-                                     String category, @RequestParam(required = false) String brand,
-                         Model model) {
-        List<Product> filtered =
-                productService.findByBrandAndOrCategory(brand, category);
-
+    public String filter(@RequestParam(required = false) String category,
+                         @RequestParam(required = false) String brand, Model model) {
+        List<Product> filtered = productService.findByBrandAndOrCategory(brand, category);
         model.addAttribute("products", filtered);
-        // Overrides the @ModelAttribute above.
         return "main";
     }
 

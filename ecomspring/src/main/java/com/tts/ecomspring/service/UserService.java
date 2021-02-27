@@ -26,6 +26,7 @@ public class UserService implements UserDetailsService {
     public User findByUsername(String username){
         return userRepository.findByUsername(username);
     }
+
     public void saveNew(User user){
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         userRepository.save(user);
@@ -43,11 +44,11 @@ public class UserService implements UserDetailsService {
         user.setCart(cart);
         saveExisting(user);
     }
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = findByUsername(username);
-        if(user == null) throw new UsernameNotFoundException("Username name not found");
+        if(user == null) throw new UsernameNotFoundException("Username name not found.");
         return user;
     }
-
 }

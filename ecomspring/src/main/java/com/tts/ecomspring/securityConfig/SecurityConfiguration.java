@@ -43,7 +43,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .loginProcessingUrl("/signin")
                 .and().logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/signout"))
-                .logoutSuccessUrl("/").and().exceptionHandling();
+                .logoutSuccessUrl("/")
+                .and().exceptionHandling();
         http.headers().frameOptions().disable();
     }
 }
