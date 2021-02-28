@@ -1,6 +1,6 @@
 package com.tts.ecomspring.controller;
 
-import com.tts.bookmart.model.ChargeRequest;
+import com.tts.ecomspring.model.ChargeRequest;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

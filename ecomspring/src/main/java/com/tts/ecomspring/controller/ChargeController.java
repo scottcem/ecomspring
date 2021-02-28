@@ -2,8 +2,8 @@ package com.tts.ecomspring.controller;
 
 import com.stripe.exception.StripeException;
 import com.stripe.model.Charge;
-import com.tts.bookmart.model.ChargeRequest;
-import com.tts.bookmart.service.StripeService;
+import com.tts.ecomspring.model.ChargeRequest;
+import com.tts.ecomspring.service.StripeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

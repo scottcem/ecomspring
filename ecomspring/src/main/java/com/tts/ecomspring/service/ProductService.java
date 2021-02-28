@@ -26,7 +26,7 @@ public class ProductService {
     }
 
     public List<String> findDistinctCategories() {
-        return productRepository.findDistinctCategories();
+        return productRepository.findDistinctCategory();
     }
 
     public void save(Product product) {

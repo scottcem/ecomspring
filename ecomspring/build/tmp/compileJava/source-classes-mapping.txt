@@ -1,3 +1,5 @@
+com/tts/ecomspring/controller/CheckoutController.java
+ com.tts.ecomspring.controller.CheckoutController
 com/tts/ecomspring/repository/UserRepository.java
  com.tts.ecomspring.repository.UserRepository
 com/tts/ecomspring/repository/ProductRepository.java
@@ -5,6 +7,11 @@ com/tts/ecomspring/repository/ProductRepository.java
 com/tts/ecomspring/model/Product.java
  com.tts.ecomspring.model.Product
  com.tts.ecomspring.model.Product$ProductBuilder
+com/tts/ecomspring/model/ChargeRequest.java
+ com.tts.ecomspring.model.ChargeRequest
+ com.tts.ecomspring.model.ChargeRequest$Currency
+com/tts/ecomspring/service/StripeService.java
+ com.tts.ecomspring.service.StripeService
 com/tts/ecomspring/controller/MainController.java
  com.tts.ecomspring.controller.MainController
 com/tts/ecomspring/securityConfig/WebMvcConfiguration.java
@@ -24,7 +31,11 @@ com/tts/ecomspring/securityConfig/SecurityConfiguration.java
 com/tts/ecomspring/model/Role.java
  com.tts.ecomspring.model.Role
  com.tts.ecomspring.model.Role$RoleBuilder
+com/tts/ecomspring/securityConfig/ThymeleafConfiguration.java
+ com.tts.ecomspring.config.ThymeleafConfiguration
 com/tts/ecomspring/controller/CartController.java
  com.tts.ecomspring.controller.CartController
 com/tts/ecomspring/controller/ProductController.java
  com.tts.ecomspring.controller.ProductController
+com/tts/ecomspring/controller/ChargeController.java
+ com.tts.ecomspring.controller.ChargeController
